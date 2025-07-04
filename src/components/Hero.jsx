@@ -1,64 +1,121 @@
-import React from 'react'
-import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
-import heroImage from '../assets/hero-image.png'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn, textVariant } from '../utils/motion';
+import backgroundcover from '../assets/backgroundcover6.png';
+import leftTree from '../assets/left.png';
+import rightTree from '../assets/right.png';
+import wave1 from '../assets/updatewaves1.png';
+import wave2 from '../assets/updatewaves2.png';
 
 const Hero = () => {
   return (
-    <section id="home" className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8 pt-44 pb-16 container mx-auto">
-      {/* Left Column */}
-      <div className="w-full md:w-1/2 space-y-8">
-        <motion.div variants={fadeIn('right', 0.2)} initial="hidden" whileInView="show">
-          {/* Star badge */}
-          <div className="flex items-center gap-2 bg-gray-50 w-fit px-4 py-2 rounded-full hover:bg-gray-100 transition-colors cursor-pointer group">
-            <span className="text-blue-600 group-hover:scale-110 transition-transform">★</span>
-            <span className="text-sm font-medium">Jump start your growth</span>
-          </div>
-        </motion.div>
+    <section
+      id="home"
+      className="relative h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white overflow-hidden"
+      style={{
+        backgroundImage: `url(${backgroundcover})`,
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#F2EFCF]/20 z-[1]" />
 
-        <motion.h1 
+      {/* Left Tree */}
+      <motion.img
+        src={leftTree}
+        alt="Left Tree"
+        initial={{ x: -200, opacity: 1 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="absolute bottom-0 left-0 w-400 sm:w-400 z-[2]"
+      />
+
+      {/* Right Tree */}
+      <motion.img
+        src={rightTree}
+        alt="Right Tree"
+        initial={{ x: 200, opacity: 1 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.4 }}
+        className="absolute bottom-0 right-0 w-400 sm:w-400 z-[2]"
+      />
+
+      {/* Content */}
+      <div className="relative z-[3] text-center max-w-4xl px-4">
+        <motion.h1
           variants={textVariant(0.3)}
           initial="hidden"
           whileInView="show"
-          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+          className="text-[#F2EFCF] text-shadow-black/50 text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
         >
-          We're searching for the world's{' '}
-          <span className="text-blue-600 relative inline-block">
-            Boldest and Brightest
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-200/60"></span>
-          </span>{' '}
-          Founders
-          <span className="inline-block ml-2 animate-pulse">⏰</span>
+          COME BUILD THE NEXT
+          <br />
+          <span className="text-[#F2EFCF] decoration-[#F2EFCF]">WAVE WITH US</span>
+          <br />
+
+          {/* Animated Highlight Behind Text */}
+          <span className="relative inline-block">
+            {/* Rectangle animation behind text */}
+            <motion.span
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1.5, ease: 'easeInOut' }}
+              className="absolute inset-0 bg-[#76a39a] z-0 origin-left rounded-md"
+            />
+            {/* Shining gradient text */}
+            <span className="relative z-10 inline-block px-2 py-1 bg-gradient-to-r from-[#F2EFCF] via-white to-[#F2EFCF] bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient font-bold">
+              HERE IN MANILA
+            </span>
+          </span>
         </motion.h1>
 
-        <motion.p 
+        <motion.button
           variants={fadeIn('up', 0.4)}
           initial="hidden"
           whileInView="show"
-          className="text-gray-600 text-lg md:text-xl max-w-xl"
+          className="mt-8 px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition-colors"
         >
-          ASES Manila connects student entrepreneurs through self-growth, design thinking, global startup access, and community — all under Stanfords global initiative.
-        </motion.p>
-
+          Apply now
+        </motion.button>
       </div>
 
-      {/* Right Column - Images */}
-      <motion.div 
-        variants={fadeIn('left', 0.5)}
-        initial="hidden"
-        whileInView="show"
-        className="w-full md:w-1/2 mt-16 md:mt-0 pl-0 md:pl-12"
-      >
-        <div className="relative">
-          <img
-            src={heroImage}
-            alt="Team meeting"
-            className="rounded-lg relative z-10 hover:scale-[1.02] transition-transform duration-300"
-          />
-        </div>
-      </motion.div>
+      {/* Bottom Waves */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden z-[1]">
+        {/* Wave 1 */}
+        <motion.img
+          src={wave1}
+          alt="Wave 1"
+          animate={{
+            y: [0, 50, 0],
+            x: [0, 20, -20, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="min-w-[120%] scale-[1.2] mt-20 pointer-events-none"
+          style={{ objectFit: 'cover' }}
+        />
+        {/* Wave 2 */}
+        <motion.img
+          src={wave2}
+          alt="Wave 2"
+          animate={{
+            y: [0, 40, 0],
+            x: [0, 10, -10, 0],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: 1.5,
+          }}
+          className="min-w-[120%] scale-[1.2] -mt-40 pointer-events-none"
+          style={{ objectFit: 'cover' }}
+        />
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

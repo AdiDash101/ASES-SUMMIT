@@ -1,109 +1,75 @@
-import React from 'react'
-import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeIn, textVariant } from '../utils/motion';
+import Manila from '../assets/Manila.jpg';
+import Club from '../assets/Club.jpg';
+import Hackathon from '../assets/hackathon.jpg';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const FeaturesSection = () => {
-  const features = [
-    {
-      icon: "🔍", 
-      title: "Find out what you need",
-      description: "We present you a proposal and discuss nitty-gritty like"
-    },
-    {
-      icon: "⚙️",
-      title: "Work out the details", 
-      description: "Communication protocols apart from engagement models"
-    },
-    {
-      icon: "🚀",
-      title: "We get to work fast",
-      description: "Protocols apart from engage models, pricing billing"
-    }
-  ]
+const slides = [
+  {
+    image: Manila,
+    title: 'STARTUP DEEP DIVE',
+    description:
+      'Kick off in Metro Manila with exclusive access to the Philippine innovation scene. Go behind the scenes with top founders, VC firms (including Foxmont Capital, Kaya Founders, and Founders Launchpad), and experience real work in real time. Design thinking sprints, startup tours, and collaborative challenges included.',
+  },
+  {
+    image: Club,
+    title: 'COASTAL IMMERSION',
+    description:
+      'The summit wraps up with a two-day tropical retreat at Club Laiya, Batangas—where crystal waters meet venture creation. Here, delegates compete in a beachfront hackathon, pitch to real investors, and unwind with activities like snorkeling, archery, paddleboarding, and Aqua Zumba.',
+  },
+  {
+    image: Hackathon,
+    title: 'HACKATHON',
+    description:
+      'This year’s theme: Scalable Solutions for the Philippines. You’ll prototype ventures in four high-need sectors—Healthcare, Agriculture, Consumer Solutions, and Climatech—guided by insights from the 2024 Philippine Venture Capital Report. Use cutting-edge tech, real constraints, and local insight to pitch solutions that matter.',
+  },
+];
 
+const FeaturesSlideshow = () => {
   return (
-    <motion.section 
-      variants={fadeIn('up', 0.2)}
-      initial="hidden"
-      whileInView="show"
-      className="max-w-7xl mx-auto px-4 py-16"
-    >
-      <motion.div 
-        variants={fadeIn('up', 0.3)}
-        className="text-center mb-12"
+    <section id="about" className="w-full py-16 bg-[#f2efcf]">
+      <motion.div
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView="show"
+        className="max-w-6xl mx-auto px-4"
       >
-        <motion.h2 
-          variants={textVariant(0.2)}
-          className="text-3xl font-bold mb-4"
+        <motion.h2
+          variants={textVariant(0.3)}
+          className="text-4xl font-extrabold text-[#6C1023] text-center mb-10"
         >
-          How can we help your business?
+          What to Expect
         </motion.h2>
-        <motion.p 
-          variants={fadeIn('up', 0.4)}
-          className="text-gray-600"
-        >
-          When you resell besnik, you build trust and increase
-        </motion.p>
-      </motion.div>
-      
-      <motion.div 
-        variants={fadeIn('up', 0.5)}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8"
-      >
-        {features.map((feature, index) => (
-          <motion.div 
-            key={index}
-            variants={fadeIn('up', 0.3 * (index + 1))}
-            className="flex flex-col items-center p-6"
-          >
-            <motion.div 
-              variants={fadeIn('down', 0.4 * (index + 1))}
-              className="w-24 h-24 rounded-full mb-6 flex items-center justify-center" 
-              style={{ 
-                backgroundColor: index === 0 ? '#F1EFFD' : 
-                               index === 1 ? '#FFE7E7' : 
-                               '#FFF3E4'
-              }}
-            >
-              <motion.div 
-                variants={fadeIn('up', 0.5 * (index + 1))}
-                className="text-3xl"
-              >
-                {feature.icon}
-              </motion.div>
-            </motion.div>
-            <motion.h3 
-              variants={textVariant(0.3)}
-              className="text-2xl font-medium mb-3"
-            >
-              {feature.title}
-            </motion.h3>
-            <motion.p 
-              variants={fadeIn('up', 0.6 * (index + 1))}
-              className="text-gray-500 text-center"
-            >
-              {feature.description}
-            </motion.p>
-          </motion.div>
-        ))}
-      </motion.div>
 
-      <motion.div 
-        variants={fadeIn('up', 0.7)}
-        className="text-center mt-12"
-      >
-        <motion.button 
-          variants={fadeIn('up', 0.8)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-blue-600 text-white cursor-pointer px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors relative"
+        <Carousel
+          autoPlay
+          infiniteLoop
+          interval={7000}
+          showThumbs={false}
+          showStatus={false}
+          showIndicators={true}
+          className="rounded-xl overflow-hidden shadow-lg"
         >
-          Become a Partner
-          <div className="absolute -z-10 w-full h-full rounded-full bg-blue-600/30 blur-xl top-0 left-0"></div>
-        </motion.button>
+          {slides.map((slide, index) => (
+            <div key={index} className="relative">
+              <img src={slide.image} alt={slide.title} className="object-cover h-[500px] w-full" />
+              <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-8 text-left">
+                <h3 className="text-2xl font-extrabold text-[#F2EFCF] mb-3">
+                  {slide.title}
+                </h3>
+                <p className="text-[#f2efcf] max-w-3xl text-base">
+                  {slide.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </Carousel>
       </motion.div>
-    </motion.section>
-  )
-}
+    </section>
+  );
+};
 
-export default FeaturesSection
+export default FeaturesSlideshow;

@@ -1,5 +1,7 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+/* Now it's safe to add other styles below */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
@@ -7,5 +9,43 @@ html {
 
 /* customize container here using tailwindcss */
 .section-container {
-  @apply  px-4 sm:px-6 lg:px-8 py-16 container mx-auto;
+  @apply px-4 sm:px-6 lg:px-8 py-16 container mx-auto;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, Arial, sans-serif;
+
+}
+/* Flip effect classes */
+.perspective {
+  perspective: 1000px;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.rotate-y-0 {
+  transform: rotateY(0deg);
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 2s ease-in-out infinite alternate;
 }
