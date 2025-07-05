@@ -6,7 +6,7 @@ import profile3 from "../assets/profile3.jpg";
 import flag1 from "../assets/flag1.png";
 import flag2 from "../assets/flag2.png";
 import flag3 from "../assets/flag3.png";
-import backgroundTestimony from "../assets/backgroundtestimony.jpg";
+import backgroundTestimony from "../assets/backgroundtest2.png";
 
 const testimonials = [
   {

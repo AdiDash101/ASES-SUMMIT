@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import img1 from "../assets/img1.jpg";
+import img1 from "../assets/postcard2.png";
 import img2 from "../assets/img2.jpg";
 import backgroundOverview1 from "../assets/backgroundoverview1.png";
 import backgroundOverview2 from "../assets/backgroundoverview2.png";
@@ -52,7 +52,7 @@ const MonitorSection = () => {
         </div>
 
         {/* Right Side - Text Content */}
-        <motion.div className="w-full md:w-1/2 text-[#fff4e0] bg-[#1e3a48] rounded-lg p-8">
+        <motion.div className="w-full md:w-1/2 text-[#fff4e0] bg-[#1A3D40] rounded-lg p-8">
           <h2 className="text-3xl md:text-4xl font-bold text-yellow-300 mb-4">Summit Overview</h2>
           <p className="text-sm leading-relaxed mb-4">
             This year, the ASES International Summit 2025, the flagship program of the Affiliated Stanford Entrepreneurial Society (ASES), is making waves for the third time in the Philippines—hosted by ASES Manila. During last year’s edition in Manila, the summit brought together 30-35 top student talents from 15+ countries, selected from over 200 applicants, for a week-long immersive experience.
@@ -64,8 +64,10 @@ const MonitorSection = () => {
             Throughout the week, delegates will participate in a series of hands-on workshops, design thinking sprints, pitch competitions, and collaborative venture-building activities—set against Southeast Asia’s growing startup scene.
           </p>
           <a
-            href="#"
-            className="inline-block mt-4 bg-yellow-400 text-[#1e3a48] font-semibold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors duration-300"
+            href="https://forms.gle/za6GyNee9pTYhscL9?fbclid=IwY2xjawLV0QtleHRuA2FlbQIxMQABHpcQ8JwaZFE8eQmP0IYpTvRFwKTUQio4BhAymBi5k49H5UGnDO289WEHQm1X_aem_67eNcH8gB_e6R666gXr8yQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 bg-yellow-400 text-[#1e3a48] font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition-colors duration-300"
           >
             Apply Now
           </a>
@@ -76,20 +78,3 @@ const MonitorSection = () => {
 };
 
 export default MonitorSection;
-
-/* Tailwind CSS utilities needed: */
-/* Add these to your index.css or global stylesheet */
-/*
-.perspective {
-  perspective: 1000px;
-}
-.transform-style {
-  transform-style: preserve-3d;
-}
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
-*/

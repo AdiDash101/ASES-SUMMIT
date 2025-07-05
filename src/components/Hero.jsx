@@ -54,62 +54,46 @@ const Hero = () => {
 
           {/* Animated Highlight Behind Text */}
           <span className="relative inline-block">
-            {/* Rectangle animation behind text */}
             <motion.span
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1.5, ease: 'easeInOut' }}
               className="absolute inset-0 bg-[#76a39a] z-0 origin-left rounded-md"
             />
-            {/* Shining gradient text */}
             <span className="relative z-10 inline-block px-2 py-1 bg-gradient-to-r from-[#F2EFCF] via-white to-[#F2EFCF] bg-[length:200%_100%] bg-clip-text text-transparent animate-gradient font-bold">
               HERE IN MANILA
             </span>
           </span>
         </motion.h1>
 
-        <motion.button
+        <motion.a
+          href="https://forms.gle/za6GyNee9pTYhscL9?fbclid=IwY2xjawLV0QtleHRuA2FlbQIxMQABHpcQ8JwaZFE8eQmP0IYpTvRFwKTUQio4BhAymBi5k49H5UGnDO289WEHQm1X_aem_67eNcH8gB_e6R666gXr8yQ"
+          target="_blank"
+          rel="noopener noreferrer"
           variants={fadeIn('up', 0.4)}
           initial="hidden"
           whileInView="show"
-          className="mt-8 px-8 py-3 border border-white rounded-full hover:bg-white hover:text-black transition-colors"
+          className="inline-block mt-8 px-8 py-3 border-2 border-[#F2EFCF] text-[#F2EFCF] font-extrabold text-lg rounded-full hover:bg-[#F2EFCF] hover:text-black transition-colors duration-300"
         >
           Apply now
-        </motion.button>
+        </motion.a>
       </div>
 
       {/* Bottom Waves */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden z-[1]">
-        {/* Wave 1 */}
         <motion.img
           src={wave1}
           alt="Wave 1"
-          animate={{
-            y: [0, 50, 0],
-            x: [0, 20, -20, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
+          animate={{ y: [0, 50, 0], x: [0, 20, -20, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
           className="min-w-[120%] scale-[1.2] mt-20 pointer-events-none"
           style={{ objectFit: 'cover' }}
         />
-        {/* Wave 2 */}
         <motion.img
           src={wave2}
           alt="Wave 2"
-          animate={{
-            y: [0, 40, 0],
-            x: [0, 10, -10, 0],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: 1.5,
-          }}
+          animate={{ y: [0, 40, 0], x: [0, 10, -10, 0] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
           className="min-w-[120%] scale-[1.2] -mt-40 pointer-events-none"
           style={{ objectFit: 'cover' }}
         />

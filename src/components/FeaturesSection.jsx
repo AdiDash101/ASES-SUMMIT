@@ -41,7 +41,7 @@ const FeaturesSlideshow = () => {
           variants={textVariant(0.3)}
           className="text-4xl font-extrabold text-[#6C1023] text-center mb-10"
         >
-          What to Expect
+          WHAT TO EXPECT
         </motion.h2>
 
         <Carousel

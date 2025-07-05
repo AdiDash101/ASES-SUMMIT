@@ -111,7 +111,7 @@ const ScheduleOfEvents = () => {
           variants={textVariant(0.3)}
           className="text-3xl md:text-4xl font-bold text-[#5a3c2e] text-center mb-12"
         >
-          Key Events
+          KEY EVENTS
         </motion.h2>
 
         <AnimatePresence mode="wait">

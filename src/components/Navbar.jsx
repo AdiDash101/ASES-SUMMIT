@@ -17,6 +17,10 @@ const Navbar = () => {
     { href: '#testimonials', label: 'Testimonials' },
   ];
 
+  // External link for Apply Now
+  const formLink =
+    'https://forms.gle/za6GyNee9pTYhscL9?fbclid=IwY2xjawLV0QtleHRuA2FlbQIxMQABHpcQ8JwaZFE8eQmP0IYpTvRFwKTUQio4BhAymBi5k49H5UGnDO289WEHQm1X_aem_67eNcH8gB_e6R666gXr8yQ';
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -41,7 +45,7 @@ const Navbar = () => {
             : 'bg-transparent'
         }`}
       >
-        {/* ✅ Logos with translucent blur background */}
+        {/* Logos with translucent blur background */}
         <motion.a
           href="#home"
           variants={fadeIn('right', 0.3)}
@@ -98,14 +102,20 @@ const Navbar = () => {
           ))}
         </motion.div>
 
-        {/* CTA Button */}
+        {/* Desktop CTA Button */}
         <motion.button
           variants={fadeIn('left', 0.3)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="hidden md:block bg-[#F2EFCF] text-[#6C1023] px-6 py-2.5 rounded-lg text-sm font-medium transition-all hover:shadow-lg hover:shadow-[#f2efcf88]"
         >
-          <a href="#newsletter">Apply Now</a>
+          <a
+            href={formLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apply Now
+          </a>
         </motion.button>
       </div>
 
@@ -137,14 +147,18 @@ const Navbar = () => {
                 {link.label}
               </motion.a>
             ))}
-            <motion.button
+            {/* Mobile CTA Button */}
+            <motion.a
               variants={fadeIn('up', 0.4)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-[#F2EFCF] text-[#6C1023] px-6 py-2.5 rounded-lg text-sm font-medium transition-all hover:shadow-lg hover:shadow-[#f2efcf88]"
+              href={formLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-[#F2EFCF] text-[#6C1023] px-6 py-2.5 rounded-lg text-sm font-medium transition-all hover:shadow-lg hover:shadow-[#f2efcf88]"
             >
-              Get in touch
-            </motion.button>
+              Apply Now
+            </motion.a>
           </motion.div>
         </motion.div>
       )}
