@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
+import { HiOutlineMail } from 'react-icons/hi';
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
-import asesLogo from "../assets/ASES.svg";
+import asesLogo from "../assets/ASES2.svg";
 
 const Footer = () => {
   return (
@@ -19,33 +20,28 @@ const Footer = () => {
           <img src={asesLogo} alt="ASES Logo" className="w-24 h-24" />
         </motion.div>
 
-        {/* Contact Section */}
-        <motion.div variants={fadeIn('up', 0.4)} className="text-white text-center space-y-1">
-          <h3 className="text-lg font-bold">Contact</h3>
-          <p className="text-sm">
-            <a href="mailto:rheign@wavemakerssummit.org" className="hover:underline">
-              rheign@wavemakerssummit.org
-            </a>
-          </p>
-          <p className="text-sm">
-            <a href="mailto:sharan@wavemakerssummit.org" className="hover:underline">
-              sharan@wavemakerssummit.org
-            </a>
-          </p>
-        </motion.div>
-
-        {/* Social Icons */}
+        {/* All Icons in One Row */}
         <motion.div 
           variants={fadeIn('up', 0.5)}
-          className="flex gap-4"
+          className="flex gap-4 text-white"
         >
+          {/* Email */}
+          <a 
+            href="mailto:rheign@wavemakerssummit.org" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+          >
+            <HiOutlineMail className="w-5 h-5" />
+          </a>
+
           {/* TikTok */}
           <motion.a 
             whileHover={{ scale: 1.1 }}
             href="https://www.tiktok.com/@aseswavemakersph"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
+            className="w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors"
           >
             <SiTiktok className="w-5 h-5" />
           </motion.a>
@@ -53,10 +49,10 @@ const Footer = () => {
           {/* LinkedIn */}
           <motion.a 
             whileHover={{ scale: 1.1 }}
-            href="https://www.linkedin.com/company/aseswavemakersph/?fbclid=IwY2xjawLVzmhleHRuA2FlbQIxMQABHs7ui8-JC92sf2rDhnmWutUGnSjxmCV5LY1iflbOt_PACnMRt5DsqIfl94j9_aem_n1Ykmj_5XOalrG6-KNj4uQ"
+            href="https://www.linkedin.com/company/aseswavemakersph/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
+            className="w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors"
           >
             <FaLinkedinIn className="w-5 h-5" />
           </motion.a>
@@ -67,7 +63,7 @@ const Footer = () => {
             href="https://www.instagram.com/aseswavemakersph/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors"
+            className="w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors"
           >
             <FaInstagram className="w-5 h-5" />
           </motion.a>

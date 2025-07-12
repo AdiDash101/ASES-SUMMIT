@@ -14,7 +14,7 @@ const Navbar = () => {
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'Overview' },
     { href: '#services', label: 'Rules' },
-    { href: '#testimonials', label: 'Testimonials' },
+    { href: '#testimonials', label: 'Testimonies' },
   ];
 
   // External link for Apply Now

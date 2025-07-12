@@ -8,31 +8,33 @@ import { BiTime } from "react-icons/bi";
 const ServicesSection = () => {
   const learnMoreLink =
     "https://drive.google.com/file/d/1-iFBfY84-OvXRPn_4feM5DCjIwLqgk3h/view";
+  const applyNowLink =
+    "https://docs.google.com/forms/d/e/1FAIpQLSftwu05iHH5hIsK4ujHzdxSr6JuZsDXTWS3llwiQp2yVAXmRQ/viewform";
 
   const services = [
     {
-      icon: <BsStack className="w-8 h-8 text-indigo-600" />,
+      icon: <BsStack className="w-8 h-8" style={{ color: "#FD8C2B" }} />,
       title: "Application Form",
       step: "1",
       description:
         "Participants must complete the official application form with personal details, essays, and a short video.",
     },
     {
-      icon: <FiSettings className="w-8 h-8" style={{ color: "#BB3E48" }} />,
+      icon: <FiSettings className="w-8 h-8" style={{ color: "#D90F3A" }} />,
       title: "Application Fee",
       step: "2",
       description: [
         <>
-          <span className="font-semibold">Early Decision:</span> 600$
+          <span className="font-semibold">Early Decision:</span> $600
         </>,
         <>
-          <span className="font-semibold">Regular Decision:</span> 700$
+          <span className="font-semibold">Regular Decision:</span> $700
         </>,
-        "Note: All travel, lodging, meals, summit merch, and activities are included.",
+        "Note: All domestic travel, lodging, meals, summit merch, and activities are included.",
       ],
     },
     {
-      icon: <BiTime className="w-8 h-8" style={{ color: "#DE9654" }} />,
+      icon: <BiTime className="w-8 h-8" style={{ color: "#FAD534" }} />,
       title: "Deadlines",
       step: "3",
       description: [
@@ -42,13 +44,10 @@ const ServicesSection = () => {
         <>
           <span className="font-semibold">Regular Decision:</span> July 25, 2025
         </>,
-        <>
-          <span className="font-semibold">Final Decision:</span> TBA
-        </>,
       ],
     },
     {
-      icon: <HiLightBulb className="w-8 h-8" style={{ color: "#EDD268" }} />,
+      icon: <HiLightBulb className="w-8 h-8" style={{ color: "#066B6C" }} />,
       title: "Hackathon Theme",
       step: "4",
       description:
@@ -89,17 +88,17 @@ const ServicesSection = () => {
               variants={fadeIn("right", 0.7)}
               className="flex items-start gap-3"
             >
-              <div className="w-3 h-3 mt-2 rounded-full bg-indigo-600"></div>
+              <div className="w-3 h-3 mt-2 rounded-full" style={{ backgroundColor: "#F28B82" }}></div>   {/*Color Here*/}
               <span className="text-gray-700">
-                Current undergraduate students enrolled in a college or
-                university at the time of the summit.
+                All undergraduate, fresh graduate, and graduate students at the
+                time of the summit.
               </span>
             </motion.div>
             <motion.div
               variants={fadeIn("right", 0.8)}
               className="flex items-start gap-3"
             >
-              <div className="w-3 h-3 mt-2 rounded-full bg-indigo-600"></div>
+              <div className="w-3 h-3 mt-2 rounded-full" style={{ backgroundColor: "#F28B82" }}></div>
               <span className="text-gray-700">
                 Students from all disciplines and nationalities are welcome to
                 apply.
@@ -107,7 +106,7 @@ const ServicesSection = () => {
             </motion.div>
           </motion.div>
           <motion.a
-            href={learnMoreLink}
+            href={applyNowLink}
             target="_blank"
             rel="noopener noreferrer"
             variants={fadeIn("up", 0.9)}
@@ -115,7 +114,7 @@ const ServicesSection = () => {
             whileTap={{ scale: 0.95 }}
             className="inline-block mt-8 bg-[#1A3D40] text-white px-8 py-3 cursor-pointer rounded-full hover:bg-[#163236] transition-colors"
           >
-            Learn More
+            Apply Now
           </motion.a>
         </motion.div>
 
@@ -123,7 +122,7 @@ const ServicesSection = () => {
         <motion.div
           variants={fadeIn("left", 0.4)}
           className="relative border-l-4 pl-8 space-y-12"
-          style={{ borderColor: "#FEF7E8" }}
+          style={{ borderColor: "#C1471C" }}
         >
           {services.map((service, index) => (
             <motion.div
@@ -135,7 +134,7 @@ const ServicesSection = () => {
               whileHover={{ scale: 1.03 }}
               className="relative bg-[#FEF7E8] rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="absolute -left-7 top-4 w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center text-sm font-bold shadow-md">
+              <div className="absolute -left-7 top-4 w-12 h-12 rounded-full bg-[#1A3D40] text-white flex items-center justify-center text-sm font-bold shadow-md">
                 Step {service.step}
               </div>
               <div className="mb-4">{service.icon}</div>
@@ -156,7 +155,10 @@ const ServicesSection = () => {
                       key={i}
                       className="flex items-start gap-2 text-gray-700"
                     >
-                      <span className="mt-1 w-2.5 h-2.5 bg-cyan-400 rounded-full flex-shrink-0" />
+                      <span
+                        className="mt-1 w-2.5 h-2.5 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: "#F28B82" }} // Light red bullet
+                      />
                       {item}
                     </li>
                   ))}
@@ -164,14 +166,16 @@ const ServicesSection = () => {
               ) : (
                 <p className="text-gray-700 mb-4">{service.description}</p>
               )}
-              <a
-                href={learnMoreLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#1A3D40] font-medium hover:underline"
-              >
-                LEARN MORE
-              </a>
+              {service.step === "1" && (
+                <a
+                  href={learnMoreLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1A3D40] font-medium hover:underline"
+                >
+                  LEARN MORE
+                </a>
+              )}
             </motion.div>
           ))}
         </motion.div>

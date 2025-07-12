@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+/* ✅ Use Inter from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Optional: keep Montserrat available for specific use */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 /* Now it's safe to add other styles below */
@@ -7,15 +12,25 @@ html {
   scroll-padding-top: 100px;
 }
 
-/* customize container here using tailwindcss */
+/* ✅ Set Inter as the global font */
+body {
+  font-family: 'Inter', system-ui, Arial, sans-serif;
+}
+
+/* Optional classes for using other fonts */
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.merriweather {
+  font-family: 'Merriweather', serif;
+}
+
+/* Customize container using Tailwind utility classes */
 .section-container {
   @apply px-4 sm:px-6 lg:px-8 py-16 container mx-auto;
 }
 
-body {
-  font-family: 'Montserrat', system-ui, Arial, sans-serif;
-
-}
 /* Flip effect classes */
 .perspective {
   perspective: 1000px;
@@ -37,6 +52,7 @@ body {
   backface-visibility: hidden;
 }
 
+/* Gradient animation */
 @keyframes gradient {
   0% {
     background-position: 200% 0;

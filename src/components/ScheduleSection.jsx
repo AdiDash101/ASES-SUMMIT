@@ -140,7 +140,7 @@ const ScheduleOfEvents = () => {
                   {item.events.map((event, idx) => (
                     <li
                       key={idx}
-                      className="border-l-4 border-[#ba5d2c] pl-4"
+                      className="border-l-4 border-[#3E6A6E] pl-4"
                     >
                       <p className="text-base text-[#6b4e34] font-medium">
                         {event}
