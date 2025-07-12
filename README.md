@@ -1,6 +1,7 @@
 ASES SUMMIT WEBSITE V4.0
 Updated version 4 of the SUMMIT ASES WEBSITE
 
+- Made with **React**,**TailWindCSS** & **FramerMotion**
 - Finalized changes for color format of bullet points, and text fonts
 - Finalized footer alignment and social links
 - Fixed Postcard bug (not turning)
@@ -14,5 +15,10 @@ Updated version 4 of the SUMMIT ASES WEBSITE
 <img width="1906" height="940" alt="image" src="https://github.com/user-attachments/assets/618e25c9-580b-4bbb-86e0-6017fc424177" />
 
 Live Website: (https://wavemakerssummit.org/)
-  
+
+
+Website Completed and Coded by Aditya Dash 
+Email: dashaditya41@gmail.com
+
+**Request before using the Format or Code of the website**
   
